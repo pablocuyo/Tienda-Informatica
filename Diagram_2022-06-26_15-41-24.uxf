@@ -1,0 +1,685 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>6</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>1848</x><y>54</y><w>360</w><h>636</h></coordinates><panel_attributes>TiendaInformatica
+--
+-Nombre: String
+-services: ArrayList&lt;ItemServicio&gt;
+--
++TiendaInformatica(String )
++ getFacturas():ContenedoraDeFacturas
++setFacturas(ContenedoraDeFacturas&lt;K, Factura&gt; facturas):void
++getListaDeClientes():Contenedora&lt;K, Cliente&gt;
++setListaDeClientes(Contenedora&lt;K, Cliente&gt; listaDeClientes):void
++getListaDeVendedores():Contenedora&lt;K, Vendedor&gt; 
++setListaDeVendedores(Contenedora&lt;K, Vendedor&gt;):void
++cargarCatalogoAlaTienda(Catalogo):void
++agregarService(ItemServicio):void
++listarServices():String
++setCatalogo(Catalogo)
++getCatalogo():Catalogo
++agregarProducto(String, String , String , int , double , double ,
+String , boolean , String r, String):void
++borrarProducto(String):void
++buscarProducto(String):String
++productoAcarrito(String):Producto 
++checkProducto(String):boolean
++actualizarPrecioProducto(String ,double):void
++aumentarStockDeProducto(String ,int ):int
++reducirStockDeProducto(String,int):int
++mostrarAlmacenamiento():String
++mostrarAuriculares():String
++mostrarComputadora():String
++mostrarCooler():String
++mostrarFuentes():String
++mostrarGabinetes():String
++mostrarMemorias():String
++mostrarMicrofonos() :String
++public String mostrarMonitores():String		
++public String mostrarMothers():String		
++public String mostrarMouses():String
++public String mostrarParlantes():String
++public String mostrarPlacas():String
++public String mostrarProcesadores():String
++public String mostrarTeclados():String
++public String mostrarWebcams():String
++public String mostrarTodo():String
++public void agregarAlCarrito(Producto , int):void
++agregarServiceAlCarrito(int)
++listarCarrito():String
++tamanioDeCarro():int
++ticket():Factura
++generarServicio(Cliente):void
++agregarFactura(Factura)
++buscarFactura(int):String
++mostrarFacturasDeCliente(String):String
++getCarroDeCompras():Carrito
++pasarTiendaAArchivo():void
++archivoATiendaInformatica():void
++agregarCliente(String,String,Strini,String,String ,String):void
++listarClientes():String
++buscarCliente(String):String
++retornarCliente(String):Cliente 
++editarCliente(String ,String,int ):void
++existeCliente(K):boolean
++agregarVendedor(String,String ,String ,String ,String,String,String ):void
++listarVendedores():String
++buscarVendedor(String):String
++retornarVendedor(String):Vendedor
++editarVendedor(String ,String ,int)
++removerVendedor(String):void
++comprobarLoginVendedor(String ,String):boolean
++listarTaller():String
++conformarServicio():void
++listarFacturas():String
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1518</x><y>54</y><w>294</w><h>270</h></coordinates><panel_attributes>Catalogo
+--
+-mapaCatalogo: HashMap&lt;String,Producto&gt;
+--
++Catalogo()
++agregar(Producto):void
++eliminar(String):void
++getMapaCatalogo():HashMap&lt;String,Producot&gt;
++listar():String
++listarAlmacenamiento():String
++listarAuriculares():String
++listarComputadoras():String
++listarCoolers():String
++listarFuentes():String
++listarGabinetes():String
++listarMemorias():String
++listarMicrofonos():String
++listarMonitores():String
++listarMotherboards():String
++listarMouses():String
++listarParlantes():String
++listarPlacas():String
++listarProcesadores():String
++listarTeclados():String
++listarWebcams():String
++editar(Producto):void
++buscar(String):String
++retornarProducto(String):Producto
++devolerIt():Iterator</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1890</x><y>792</y><w>156</w><h>102</h></coordinates><panel_attributes>Taller
+--
+-serviciosTomados:LinkedList&lt;ServicioTaller&gt;
+--
++Taller()
++agregar(ServicioTaller)
++remover():ServicioTaller
++primerElemento():SeervicioTaller
++ultimoElemento():ServicioTaller
++mostrar():String
++estaVacio():boolean
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2280</x><y>138</y><w>162</w><h>108</h></coordinates><panel_attributes>Contenedora
+--
+-contenedoraGenerica:HashMap&lt;K,T&gt;
+--
++ Contenedora()
++agregarObjetoColeccion(K,T ):void
++existe(K):boolean
++eliminarObjDeLaColeccion(K):void
++mostrarElementoDeLaColeccion(K):String
++listar():String 
++devolverPersona(K):T
++devolverIterator():Iterator</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1536</x><y>666</y><w>180</w><h>126</h></coordinates><panel_attributes>Carrito
+--
+-items:ArrayList&lt;ItemPedido&gt;
+-misServicios:ArrayList&lt;ItemServicio&gt;
+--
++Carrito()
++mostrarCarrito():String
++agregar(ItemPedido):void
++agregar(ItemServicio):void
++calcularPrecioTotal():double
++getItems():ArrayList&lt;ItemPedido&gt;
++getMisServicios():ArrayList&lt;ItemServicio&gt;
++tamanioCarrito():int
++vaciarCarro():void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2646</x><y>594</y><w>156</w><h>126</h></coordinates><panel_attributes>Vendedor
+--
+-contrasenia:String
+-totalVentas:double
+--
++Vendedor(String, String, String, 
+String, String, String, String)
++getContrasenia():String
++setContrasenia(String):void
++getTotalVentas():double
++toString():String
++editarPersona:void
++comprobarContrasenia(String):boolean
++comprobarDNI(String):boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2430</x><y>612</y><w>186</w><h>90</h></coordinates><panel_attributes>Cliente
+--
+-misCompras:ArrayList&lt;Factura&gt;
+--
++Cliente(String, String, String, String, String, String)
++listarCompras():String
++agregarFacturaCliente(Factura):void
++toString():String 
++editarPersona(String dato, int opcion):void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2508</x><y>264</y><w>156</w><h>240</h></coordinates><panel_attributes>Persona
+&lt;Abstract&gt;
+--
+-nombre:String
+-apellido:String
+-dni:String
+-telefono:String
+-direccion:String
+-correo:String
+--
++Persona(String, String, String,
+ String,String,String) 
++getNombre():String
++setNombre(String):void
++getApellido():String
++setApellido(String):void
++getDni():String
++setDni(String):void
++getTelefono():String
++setTelefono(String):void
++getDireccion():String
++setDireccion(String):void
++getCorreo():String 
++setCorreo(String):void
++editarPersona(String, int):void
++equals(Object o):boolean
++hashCode():int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2346</x><y>858</y><w>126</w><h>204</h></coordinates><panel_attributes>Factura
+--
+-id:int
+-fecha:Date
+-cliente:comprador
+-listaDeProductos:String
+-precio:double
+-vendedor:String
++cantTotalFacturas:static int
+--
++Factura(Cliente, Carrito, String)
++nuevoID():void
++getId():int 
++getFecha():Date
++setCantF(int):void
++getComprador():Cliente
++getListaDeProductos():String
++getPrecio():double
++getVendedor():String
++getCantTotalFacturas():static int
++toString():String
++hashCode():int
++equals(Object o):boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2172</x><y>696</y><w>156</w><h>96</h></coordinates><panel_attributes>ContenedoraDeFacturas
+--
+-listaFacturas:HashMap&lt;K,T&gt;
+--
++ContenedoraDeFacturas()
++agregarObjetoColeccion(K, T):void
++eliminarObjDeLaColeccion(K):void
++mostrarElementoDeLaColeccion(K):String
++listar():String
++devolverIterator():Iterator
++tamanio():int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>756</x><y>468</y><w>222</w><h>390</h></coordinates><panel_attributes>Producto
+&lt;Abstract&gt;
+--
+-codigo:String , 
+-marca:String
+-modelo, String
+-stock: int
+-precio:double
+-peso: double
+-paisOrigen:String
+-rgb: boolean
+-color: String
+-descripcion:String
+--
++Producto(String,String,String,int,Double,
+double,String,boolean,String,String)
++getCodigo():String
++setCodigo(String):void
++getMarca():String
++setMarca(String):void
++getModelo():String
++setModelo(String):void
++getStock():int
++setStock(int):void
++reducirStock(int):int
++aumentarStock(int):int
++getPrecio():double
++setPrecio(double):void
++getPeso():double
++setPeso(double):void
++getPaisOrigen():String
++setPaisOrigen(String):void
++isRgb():boolean
++setRgb(boolean):void
++getColor():String
++setColor(String):void
++getDescripcion():String
++setDescripcion(String):void
++toString:String
++detallePedido():String
++equals():boolean
++hashCode():int
++productoAJson():JSONObjetc
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>684</x><y>96</y><w>216</w><h>126</h></coordinates><panel_attributes>Almacenamiento
+--
+-tipoDeDisco:String
+-capacidad:int
+--
++Almacenamiento(String , String , String , int , 
+double , double,String , boolean, String , 
+String d,int ,String)
++getTipoDeDisco():String
++setTipoDeDisco(String):void
++getCapacidad():String
++setCapacidad(int):void
++productoAJson():JSONObject 
++toString():String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1218</x><y>84</y><w>168</w><h>150</h></coordinates><panel_attributes>Auriculares
+--
+- isInalambrico:boolean
+- isMicrofono:boolean
+-largoDelCable:int
+--
++public Auriculares(String, String, String, int ,
+double , double,String, boolean, String, String , 
+boolean,boolean, int)
++isInalambrico():boolean
++setInalambrico(boolean):void
++isMicrofono():boolean
++setMicrofono(boolean):void
++getLargoDelCable():int
++setLargoDelCable(int):void
++toString():String
++productoAJson():JSONObject
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>114</x><y>78</y><w>174</w><h>336</h></coordinates><panel_attributes>Computadora
+--
+-tipoPc:String
+-disco:String
+-ram:String
+-cpu:String
+-mother:String
+-fuente:String
+-gabinete:String
+-gpu:String
+-cooler :String
+--
++Computadora(String, String, String, int, 
+double, double,String, boolea, String, String,
+ String, String, String,String, String , String ,
+ String , String,String)
+
++getTipoPc():String
++getDisco():String  
++getRam():String 
++getCpu():String 
++getMother() 
++getFuente():String 
++getGabinete():String  
++getGpu():String 
++getCooler():String  
++setTipoPc(String tipoPc):void
++setDisco(String disco):void 
++setRam(String ram):void 
++setCpu(String cpu):void 
++setMother(String mother):void 
++setFuente(String fuente):void
++setGabinete(String gabinete):void
++setGpu(String gpu):void 
++setCooler(String cooler):void 
++toString():String
++productoAJson():JSONObject
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1206</x><y>1308</y><w>144</w><h>168</h></coordinates><panel_attributes>CoolerCpu
+--
+-tdp:int
+-tipoDeDisipacion:String
+-socketCompatible:String
+--
++CoolerCpu(String , String, 
+String, int, double, double,
+String , boolean, String, String ,
+String , int, int ,String, String)
++int getTdp()
++getTipoDeDisipacion():String
++getSocketCompatible():String 	
++setTdp(int tdp):void 
++setTipoDeDisipacion(String):void 
++setSocketCompatible(String) :void
++toString():String
++getSocketCompatible():String
++productoAJson():JSONObject </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1164</x><y>1008</y><w>180</w><h>186</h></coordinates><panel_attributes>Fuente
+--
+-watts:int
+-formato:String
+-certificacion:String
+-isModular:boolean
+--
++Fuente(String, String,String ,int ,double, 
+double, String,boolean , String, String, int,
+String , String ,boolean)
++getWatts():String
++getFormato():String
++getCertificacion() :String
++isModular():boolean
++setWatts(int watts):void
++setFormato(String formato):void
++setCertificacion(String):void 
++setModular(boolean isModular):void 
++toString():String 
++public productoAJson():JSONObject </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>84</x><y>1134</y><w>216</w><h>252</h></coordinates><panel_attributes>Gabinete
+--
+-factorMother:String
+-isVentana:boolean
+-cantidadDeSlotsParaCooler:int
+-usbFrontal:int
+-alto:int
+-ancho:int
+-profundo:int
+--
++Gabinete(String, String, String, int , double, double,String, 
+ 	boolean, String, String, String, boolean, int,intl,int,int,int)
+ublic String getFactorMother() 
++isVentana() :boolean
++getCantidadDeSlotsParaCooler() :int
++getUsbFrontal() :int
++getAlto() :int
++getAncho() :int
++getProfundo() :int
++setFactorMother(String ):void 
++setCantidadDeSlotsParaCooler(int) :void 
++setUsbFrontal(int ):void 
++setAlto(int):void
++setAncho(int):void 
++setProfundo(int):void
++toString():String
++productoAJson():JSONObject</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1368</x><y>864</y><w>126</w><h>96</h></coordinates><panel_attributes>ItemPedido
+--
+-pedido:Producto 
+-precioTotal:double 
+-cantidad:int
+--
++ItemPedido(Producto, int)
++descripcionPedido():String
++getPrecioTotal():double
++getCantidad():int
++toString():String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1602</x><y>858</y><w>126</w><h>102</h></coordinates><panel_attributes>ItemServicio
+--
+-descripcion:String
+-precio:double
+--
++ItemServicio(String , double)
++getDescripcion():String
++setDescripcion(String):void
++getPrecio():double
++setPrecio(double):void
++public String toString():String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1764</x><y>990</y><w>132</w><h>126</h></coordinates><panel_attributes>ServicioTaller
+--
+-descripcion:String
+-fechaEmision:Date
+-cliente:Cliente
+--
++ServicioTaller(String, Cliente)
++getDescripcion():String
++setDescripcion(String):void
++getFechaEmision():Date
++setFechaEmision(Date):void
++getCliente():Cliente
++setCliente(Cliente):void
++toString():String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>630</x><y>1284</y><w>162</w><h>180</h></coordinates><panel_attributes>WebCam
+--
+-resolucionMaximaDevideo:String
+-tipoDeLente:String
+-tipoDeResolucion:String
+-isMicrofono:boolean
+--
++WebCam(String, String, String, int,
+ double, double, String,boolean , String , 
+String , String , String ,String , boolean )
++getResolucionMaximaDevideo():String 
++getTipoDeLente():String
++getTipoDeResolucion():String
++isMicrofono():boolean
++setResolucionMaximaDevideo(String):void
++setTipoDeLente(String):void
++setTipoDeResolucion(tipoDeResolucion):void
++setMicrofono(boolean isMicrofono):void
++toString():String
++productoAJson():JSONObject</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>870</x><y>1296</y><w>150</w><h>156</h></coordinates><panel_attributes>Teclado
+--
+-tipo:String
+-formfactor:String
+-switcH:String
+--
++Teclado:String, String, String, int, 
+double, double, String,boolean, String,
+ String, String, String, String)
++getTipo():String
++getFormfactor():String
++getSwitcH():String
++setTipo(String):void
++setFormfactor(String):void
++setSwitcH(String):void
++toString():String
++productoAJson():JSONObject</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>282</x><y>510</y><w>174</w><h>276</h></coordinates><panel_attributes>Procesador
+--
+-socket:String
+-nuecleos:int
+-hilos:int
+-frecuenciaTurbo:int
+-procesoDeFabricacion:int
+-tdp:int
+-isCooler:boolean
+--
++Procesador(String, String, String, int,
+ double, double,String, boolean, String, 
+String, String, int, int,int, int , int , boolean)
++getSocket():String
++getNucleos():int
++getHilos():int
++getFrecuenciaTurbo():int
++getProcesoDeFabricacion():int
++getTdp():int
++mostrarCooler():String
++isCooler():boolean
++setSocket(String):void
++setNucleos(int):void
++setHilos(int):void
++setFrecuenciaTurbo(int):void
++setProcesoDeFabricacion(int):void
++setTdp(int):void
++setCooler(boolean):void
++String toString():String
++productoAJson():JSONObject</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>996</x><y>90</y><w>150</w><h>216</h></coordinates><panel_attributes>PlacaDeVideo
+--
+-conectividad:String
+-consumo:int
+-tipoDeMemoria:String
+-capacidadDeMemoria:int
+-isbackPlate:boolean
+--
++PlacaDeVideo(String, String, String, int, 
+double, double,String, boolean, String, 
+String, String, int,String, int, boolean)
++getConectividad():String
++getConsumo():int
++getTipoDeMemoria():String
++getCapacidadDeMemoria():int
++isBackPlate():boolean
++showBackPlate():String
++setIsbackPlate(boolean):void
++setConectividad(String):void
++setConsumo(int):void
++setTipoDeMemoria(String):void
++setCapacidadDeMemoria(int):void
++toString():String
++productoAJson():JSONObject</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>342</x><y>1302</y><w>174</w><h>156</h></coordinates><panel_attributes>Parlante
+--
+-potencia:String
+-tipoDeConectores:String
+-alimentacion:String
+--
++Parlante(String, String, String, int,
+ double, double,String, boolean, String, 
+String, String, String,String)
++getPotencia():String
++getTipoDeConectores():String
++getAlimentacion():String
++setPotencia(String):void
++setTipoDeConectores(String):void
++setAlimentacion(String):void
++String toString():String
++productoAJson():JSONObject</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>510</x><y>1044</y><w>186</w><h>174</h></coordinates><panel_attributes>Mouse
+--
+-cantidadDeBotones:int
+-switcH:String
+-sensor:String:
+-isInalambrica:boolean
+-dpiMax:int
+--
++public Mouse(String, String, String, int,
+ double, double, String,boolean, String,
+ String, int, String, String,boolean, int)
++getCantidadDeBotones():String
++getSensor():String
++isInalambrica():boolean
++getDpiMax():int
++setCantidadDeBotones(int):void
++setSwitcH(String):void
++setSensor(String):void
++setInalambrica(boolean):void
++setDpiMax(int):void
++String toString():void
++productoAJson():JSONObject</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>456</y><w>210</w><h>288</h></coordinates><panel_attributes>MotherBoard
+--
+-plataforma:String
+-socket:String
+-factor:String
+-cantidadDeSlotsDeMemoria:int
+-puertosSata:int
+-salidasDeVideo:String
+-cantidadDeSlotsM2:int
+-puertosUSB:int
+--
++MotherBoard(String, String, String, int, 
+double, double,String, boolean,String,
+String, String, String.String, int, int, String, int,int)
++getPlataforma():String 
++getSocket():String 
++getFactor():String 
++getCantidadDeSlotsDeMemoria():int
++getPuertosSata():int
++getSalidasDeVideo():String
++getCantidadDeSlotsM2():int
++getPuertosUSB():int
++setPlataforma(String):void
++setSocket(String):void
++setFactor(String):void
++setCantidadDeSlotsDeMemoria(int):void
++setPuertosSata(int):void
++setSalidasDeVideo(String):void
++setCantidadDeSlotsM2(int):void
++setPuertosUSB(int):void
++toString():String
++productoAJson():JSONObject</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>834</y><w>150</w><h>216</h></coordinates><panel_attributes>Monitor
+--
+-tipoDePanel:String
+-isCurvo: boolean
+-conexion:String
+-tipoDeFuente:String
+-pulgadas:int
+-resolucion:String
+-frecuencia:String
+--
++Monitor(String, String, String, int,
+ double, double, String,boolean, 
+String, String, String, boolean, 
+String,String, int, String, String)
++getTipoDePanel():String
++isCurvo():boolean
++getConexion():String
++getTipoDeFuente():String
++getPulgadas():int
++getResolucion():String
++getFrecuencia():String
++setTipoDePanel(String):void
++setCurvo(boolean):void
++setConexion(String):void
++setTipoDeFuente(String):void
++setPulgadas(int):void
++setResolucion(String):void
++setFrecuencia(String):void
++toString():String
++productoAJson():JSONObject</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>282</x><y>900</y><w>132</w><h>162</h></coordinates><panel_attributes>Microfono
+--
+-tipoDePie:String
+-conexion:String
+--
++Microfono(String, String, String,
+ int, double, double,String, boolean, 
+String, String, String, String) 
++getTipoDePie():String
++getConexion():String
++setTipoDePie(String):void
++setConexion(String):void
++toString():String
++productoAJson():JSONObject</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>426</x><y>102</y><w>192</w><h>258</h></coordinates><panel_attributes>MemoriaRam
+--
+-capacidad:int
+-frecuencia:int
+-tipo:String
+-cantidad:int
+-latencia:String
+-voltaje:float
+-isDisipador:boolean
+--
++MemoriaRam(String, String, String, int,
+ double, double,String, boolean, String, 
+String, int, int,String, int, String, float, boolean)
++getCapacidad():int
++getFrecuencia():int
++getTipo():String
++getCantidad():int
++getLatencia():String
++getVoltaje():float
++isDisipador():boolean
++setCapacidad(int):void
++setFrecuencia(int):void
++setTipo(String):void
++setCantidad(int):void
++setLatencia(String):void
++setVoltaje(float):void
++setDisipador(boolean):void
++toString():String
++productoAJson():JSONObject</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>936</x><y>1080</y><w>168</w><h>126</h></coordinates><panel_attributes>Cooler
+--
+-tipo:String
+-consumo:int
+--
++Cooler(String, String, String, int, double ,
+ double , String ,
+boolean , String , String , String , int)
++getTipo():String
++getConsumo() :int
++setTipo(String tipo) :void
++setConsumo(int consumo):void
++public String toString():String 
++productoAJson():JSONObject 
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1662</x><y>372</y><w>150</w><h>54</h></coordinates><panel_attributes>StreamJSON
+--
++StreamJSON()
++javaAJSON(Catalogo ):String
++JsonAJava(String):Catalogo</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1512</x><y>468</y><w>228</w><h>120</h></coordinates><panel_attributes>ArchivoHerramientas
+--
++ArchivoHerramientas()
++guardarVendedorEnArchivo(Contenedora):void
++cargarVendedoresDesdeArchivo():Contenedora
++guardarClienteEnArchivo(Contenedora):void
++cargarClientesDesdeArchivo():Contenedora
++guardarFacturasEnArchivo(Contenedora):void
++cargarFacturasDesdeArchivo():ContenedoraDeFacturas
++guardarTallerEnArchivo(Taller):void
++cargarTallerDesdeArchivo():Taller
++guardarServicesEnArchivo(ArrayList&lt;ItemServicio&gt;):void
++cargarServicesDesdeArchivo():ArrayList&lt;ItemServicio&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1098</x><y>1170</y><w>120</w><h>240</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;60;70;60;330;180;380</additional_attributes></element><element><id>Relation</id><coordinates><x>2484</x><y>498</y><w>90</w><h>126</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>130;10;130;70;10;190</additional_attributes></element><element><id>Relation</id><coordinates><x>2610</x><y>498</y><w>78</w><h>108</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80;110;160</additional_attributes></element><element><id>Relation</id><coordinates><x>2202</x><y>198</y><w>90</w><h>18</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>130;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2076</x><y>684</y><w>108</w><h>78</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>160;110;10;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2250</x><y>786</y><w>108</w><h>156</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>160;240;10;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1848</x><y>846</y><w>54</w><h>156</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;240;10;70;70;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1920</x><y>684</y><w>18</w><h>120</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;180;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1710</x><y>684</y><w>186</w><h>36</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;40;290;40;290;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1488</x><y>786</y><w>84</w><h>132</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;200;120;130;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1644</x><y>786</y><w>18</w><h>84</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1806</x><y>120</y><w>54</w><h>18</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;70;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1734</x><y>318</y><w>18</w><h>66</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1734</x><y>510</y><w>126</w><h>18</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;190;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2436</x><y>198</y><w>114</w><h>78</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>170;110;90;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>972</x><y>216</y><w>558</w><h>420</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;680;910;10</additional_attributes></element><element><id>Relation</id><coordinates><x>972</x><y>228</y><w>318</w><h>306</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;490;506;125;500;10</additional_attributes></element><element><id>Relation</id><coordinates><x>930</x><y>300</y><w>180</w><h>180</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;280;278;95;280;10</additional_attributes></element><element><id>Relation</id><coordinates><x>846</x><y>216</y><w>18</w><h>264</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;420;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>612</x><y>312</y><w>156</w><h>240</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>240;380;70;270;70;140;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>282</x><y>276</y><w>486</w><h>324</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>790;520;430;280;110;280;110;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>204</x><y>480</y><w>564</w><h>168</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>920;260;548;15;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>612</y><w>318</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>510;140;328;15;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>174</x><y>732</y><w>594</w><h>150</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>970;10;448;225;10;230</additional_attributes></element><element><id>Relation</id><coordinates><x>408</x><y>774</y><w>360</w><h>198</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>580;10;10;310</additional_attributes></element><element><id>Relation</id><coordinates><x>294</x><y>804</y><w>474</w><h>384</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>770;10;238;295;240;510;10;620</additional_attributes></element><element><id>Relation</id><coordinates><x>462</x><y>834</y><w>306</w><h>480</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>490;10;10;270;10;780</additional_attributes></element><element><id>Relation</id><coordinates><x>612</x><y>852</y><w>192</w><h>204</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>300;10;10;180;10;320</additional_attributes></element><element><id>Relation</id><coordinates><x>726</x><y>852</y><w>96</w><h>444</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>140;10;138;605;10;650;10;720</additional_attributes></element><element><id>Relation</id><coordinates><x>840</x><y>852</y><w>60</w><h>456</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>20;10;18;605;80;650;80;740</additional_attributes></element><element><id>Relation</id><coordinates><x>894</x><y>852</y><w>72</w><h>240</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>20;10;18;225;100;350;100;380</additional_attributes></element><element><id>Relation</id><coordinates><x>942</x><y>852</y><w>234</w><h>246</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>20;10;18;205;70;300;310;300;370;390</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2238</x><y>372</y><w>198</w><h>72</h></coordinates><panel_attributes>i_Colecciones
+--
++agregarObjetoColeccion(K , T ):void
++eliminarObjDeLaColeccion(K clave):void
++mostrarElementoDeLaColeccion(K):String
++listar():String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2328</x><y>240</y><w>18</w><h>144</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;220;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2310</x><y>438</y><w>18</w><h>270</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;430</additional_attributes></element></diagram>
